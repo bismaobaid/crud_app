@@ -1,0 +1,58 @@
+.con{
+  margin-top: 100px;
+}
+.button{
+  margin-top: -50px;
+ 
+}
+.buttonLocation{
+  text-align: right;
+}
+.alig{
+  text-align: center;
+  
+}
+.p{
+  background-color: black!important;
+  color: white!important;
+}
+.buttonSpace1{
+  margin-right: 10px;
+}
+.buttonSpace2{
+  margin-left: 10px;
+}
+.reg{
+  margin-top: 40px;
+}
+
+.update{
+  position:absolute;
+  right:10px;
+}
+.delete{
+  position:absolute;
+  right:60px;
+
+}
+.text{
+  margin-top: 20px;
+}
+.bb{
+  display: flex;
+  justify-content: center;
+}
+.tt{
+  font-weight: bold;
+}
+.link{
+  text-decoration: none;
+  color: black;
+}
+.link1{
+  text-decoration: none;
+  color: white;
+}
+.alert{
+  margin-top: 20px;
+}
