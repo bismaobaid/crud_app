@@ -20,6 +20,11 @@ const Home = () => {
 
   const [getUser, setGetUser] = useState([]);
   console.log(getUser);
+  console.log("user added data");
+  console.log(userdata);
+  console.log(updatedata);
+  console.log("go");
+  console.log(deletedata);
 
   // view all the users
 
@@ -55,48 +60,40 @@ const Home = () => {
   return (
     <Layout>
       {userdata ? (
-        <>
-          <Alert
-            variant="success"
-            className="alert"
-            onClose={() => setShow(false)}
-            dismissible
-          >
-            User Added Successfully!
-          </Alert>
-        </>
+        <Alert
+          variant="success"
+          className="alert"
+          onClose={() => setShow(false)}
+          dismissible
+        >
+          User Added Successfully!
+        </Alert>
       ) : (
-        " "
+        "  "
       )}
-
       {updatedata ? (
-        <>
-          <Alert
-            variant="info"
-            className="alert"
-            onClose={() => setShow(false)}
-            dismissible
-          >
-            User updated Successfully!
-          </Alert>
-        </>
+        <Alert
+          variant="info"
+          className="alert"
+          onClose={() => setShow(false)}
+          dismissible
+        >
+          User updated Successfully!
+        </Alert>
       ) : (
-        " "
+        "  "
       )}
-
       {deletedata ? (
-        <>
-          <Alert
-            variant="danger"
-            className="alert"
-            onClose={() => setShow(false)}
-            dismissible
-          >
-            User deleted Successfully!
-          </Alert>
-        </>
+        <Alert
+          variant="danger"
+          className="alert"
+          onClose={() => setShow(false)}
+          dismissible
+        >
+          User deleted Successfully!
+        </Alert>
       ) : (
-        " "
+        "  "
       )}
 
       <Container className="con" fluid="md">

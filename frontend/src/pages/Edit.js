@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { updateData } from "../context/Context";
+import { updateData, addData, deleteData } from "../context/Context";
 
 const Edit = () => {
   const { id } = useParams();
@@ -23,6 +23,16 @@ const Edit = () => {
   const navigate = useNavigate();
 
   const { updatedata, setUpdatedata } = useContext(updateData);
+  const { userdata, setUserdata } = useContext(addData);
+  const { deletedata, setDeletedata } = useContext(deleteData);
+
+  if (deletedata != null) {
+    setDeletedata("");
+  }
+
+  if (userdata != null) {
+    setUserdata("");
+  }
 
   const getviewUser = async () => {
     try {

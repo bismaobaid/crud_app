@@ -7,7 +7,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { addData } from "../context/Context";
+import { addData, deleteData } from "../context/Context";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -19,6 +19,11 @@ const Register = () => {
   const navigate = useNavigate();
 
   const { userdata, setUserdata } = useContext(addData);
+  const { deletedata, setDeletedata } = useContext(deleteData);
+
+  if (deletedata != null) {
+    setDeletedata("");
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();

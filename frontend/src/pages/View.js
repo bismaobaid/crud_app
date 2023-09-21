@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Layout from "../components/Layout/Layout";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
@@ -10,6 +10,7 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { updateData, addData, deleteData } from "../context/Context";
 
 const View = () => {
   const [getUser, setGetUser] = useState([]);
@@ -19,6 +20,12 @@ const View = () => {
   console.log(id);
 
   const navigate = useNavigate();
+
+  const { updatedata, setUpdatedata } = useContext(updateData);
+  const { deletedata, setDeletedata } = useContext(deleteData);
+  if (updatedata != null) {
+    setUpdatedata("");
+  }
 
   // view user by specific id
 
@@ -43,6 +50,9 @@ const View = () => {
       navigate("/");
       console.log(res2);
       console.log("delete data");
+      getviewUser();
+      setDeletedata(res2.data);
+      console.log(deletedata);
     } catch (error) {
       console.log(error);
     }
